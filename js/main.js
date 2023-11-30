@@ -2067,5 +2067,39 @@
             });
         }
     }
+
+    const nextIcon = '<img src="./images/icons/arrow-right.png" alt="right">';
+    const prevIcon = '<img src="./images/icons/arrow-left.png" alt="left" >';
+
+    $(".cl_carousel2").owlCarousel({
+        loop: false,
+        items: 1,
+        margin: 10,
+        nav: true,
+        navText: [
+            prevIcon,
+            nextIcon
+        ],
+        dots: false,
+        center: true,
+        autoplay: false,
+        smartSpeed: 2000,
+        autoplayTimeout: 5000,
+        responsive: {
+            0: {
+                items: 1,
+                margin: 20
+            },
+            700: {
+                items: 1,
+                margin: 20
+            },
+            1200: {
+                items: 1,
+                margin: 30
+            }
+        }
+        
+    });
     
 })( jQuery );

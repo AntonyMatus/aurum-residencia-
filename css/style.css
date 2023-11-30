@@ -5585,6 +5585,19 @@ input[type="checkbox"].error { box-shadow: 0px 0px 0px 1px rgb(255 0 0), 1px 1px
     gap: 1rem;
 }
 
+.sub-title-contacto{
+    font-family: 'Red Hat Display';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #B88013;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
 .title-modelos{
     color: #FFF;
     text-align: center;
@@ -5634,4 +5647,35 @@ input[type="checkbox"].error { box-shadow: 0px 0px 0px 1px rgb(255 0 0), 1px 1px
     font-style: normal;
     font-weight: 700;
     line-height: 64px; /* 73.563% */
+}
+
+.penthouse_metros .info {
+    color: #FFF;
+    font-family: 'Cormorant';
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    line-height: 28px;
+}
+
+.owl-carousel .owl-item img {
+    width: 70%;
+}
+
+.cl_item{
+    display: flex;
+    justify-content: center;
+}
+
+.owl-nav{
+    margin-top: 4rem;
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+}
+
+.owl-prev img, .owl-next img {
+    width: 40px;
+    height: 35px;
 }
