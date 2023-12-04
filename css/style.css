@@ -5715,7 +5715,7 @@ select, option {
 .img-full {
     width: 100%;
     height: 100vh;
-    object-fit: contain;
+    object-fit: unset;
 }
 
 .text-button-client{
