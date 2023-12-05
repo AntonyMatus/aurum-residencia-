@@ -3024,7 +3024,7 @@
     .navbar-dark.bg-transparent .push-button > span, .sticky .navbar-dark.bg-transparent .push-button > span { background: #232323; }
 
     /* header transparent */
-    .navbar.bg-transparent { background-color: #f2927c !important; }
+    .navbar.bg-transparent { background-color: #000323 !important; }
     .navbar.navbar-dark .header-social-icon, .sticky .navbar.header-dark .header-social-icon { border-color: rgba(0,0,0,.45); }
     .navbar.navbar-dark.bg-transparent .navbar-nav .nav-link, .navbar.navbar-dark.bg-transparent .header-search-icon > a, .navbar.navbar-dark.bg-transparent .header-social-icon > a, .navbar.navbar-dark.bg-transparent .header-cart-icon > a, .navbar.navbar-dark.bg-transparent .header-language > a, .navbar.navbar-dark .nav-bar-contact { color: #232323 !important;}
     header.sticky .navbar.navbar-dark.bg-transparent.header-dark .header-social-icon > a { color: #fff !important;}
@@ -6412,6 +6412,28 @@
     
     /* horizontal portfolio slider */
     .horizontal-portfolio-slider-main .horizontal-portfolio-slider .swiper-slide { height: auto;}
+
+    .img-full {
+        width: 100%;
+        height: auto;
+        object-fit: unset;
+    }
+
+    header .navbar .navbar-brand .mobile-logo, header .sidebar-nav-menu .navbar-brand .mobile-logo{
+        margin-left: -60px;
+    }
+
+    .navbar-dark.bg-transparent .navbar-toggler-line{
+        background-color: #fff;
+    }
+
+    .navbar-dark .navbar-toggler{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #B88013;
+    }
+
 }
 
 @media screen and (max-width: 575px) {

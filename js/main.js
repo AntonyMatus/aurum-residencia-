@@ -2101,5 +2101,15 @@
         }
         
     });
+
+
+    /* cambiar la imagen background */
+
+    /* if (window.innerWidth < 778) {
+        console.log("funciona");
+        $('.img-full').attr("src", "../images/sliders/img_slider-mobile.png"); 
+    }
     
+        $('.img-full').attr("src", "../images/sliders/aura_backgroud.jpeg"); 
+     */
 })( jQuery );
