@@ -6420,7 +6420,7 @@
     }
 
     header .navbar .navbar-brand .mobile-logo, header .sidebar-nav-menu .navbar-brand .mobile-logo{
-        margin-left: -60px;
+        margin-left: 0px;
     }
 
     .navbar-dark.bg-transparent .navbar-toggler-line{
@@ -6434,6 +6434,45 @@
         background-color: #B88013;
     }
 
+    #intro{
+        background: #14181E url(../images/sliders/img_mobile.png) no-repeat center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        
+        height: 64vh;
+        display: table;
+        position: relative;
+    }
+
+    .title-banner {
+        font-size: 16px;
+    }
+
+    .container-intro{
+        flex-direction: column;
+    }
+
+    .sub-title{
+        font-size: 15px;
+    }
+
+    .title{
+        text-align: left;
+        font-size: 29px;
+    }
+
+    .info-description{
+        text-align: left;
+    }
+
+    .container-back{
+        width: 90%;
+    }
+
+    .img-front {
+        max-width: 85%;
+    }
 }
 
 @media screen and (max-width: 575px) {
