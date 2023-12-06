@@ -34,9 +34,9 @@ Aurum se ubica en Altabrisa, la zona residencial de mayor plusvalía en la ciuda
                 <div class="container-fluid nav-header-container justify-content-between">
                     <div class="col-5 col-lg-2 col-sm-5 ps-lg-0 me-auto me-lg-0 " >
                         <a class="navbar-brand" href="index.html">
-                            <img src="images/logos/Logo-aurum.png" alt="" class="default-logo" style="width: 213px; height: 115px; margin-top: -6px;">
-                            <img src="images/logos/Logo-aurum.png" alt="" class="alt-logo" style="margin-left: -99px; margin-top: -6px;">
-                            <img src="images/logos/Logo-aurum.png" class="mobile-logo float-left" alt="" style="margin-top: -6px;">
+                            <img src="images/logos/Logo-aurum.png" alt="" class="default-logo" >
+                            <img src="images/logos/Logo-aurum.png" alt="" class="alt-logo" >
+                            <img src="images/logos/Logo-aurum.png" class="mobile-logo float-left" alt="" >
                         </a>
                     </div>
                     <div class="col-auto col-lg-8 col-sm-2 md-position-initial">
@@ -440,21 +440,32 @@ Aurum se ubica en Altabrisa, la zona residencial de mayor plusvalía en la ciuda
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-10 col-xl-10">
-                        <div class="cl_items cl_carousel2 owl-carousel owl-theme" data-aos="fade-up">
+                        <div class="cl_items cl_carousel2 owl-carousel owl-theme popup-gallery" data-aos="fade-up">
                             <div class="cl_item">
-                              <img class="carousel-img" loading="lazy" src="images/gallery/gallery_1.png" alt="Imagen 1">
+                                <a class="carousel-img" href="images/gallery/01-AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="Fachada">
+                                    <img class="carousel-img" loading="lazy" src="images/gallery/01-AURA_DEPAS.jpg" alt="Imagen 1">
+                                </a>
                             </div>
                             <div class="cl_item">
-                              <img loading="lazy" src="images/gallery/04_AURA_DEPAS.jpg" alt="Imagen 2">
+                                <a class="carousel-img" href="images/gallery/04_AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="">
+                                    <img loading="lazy" src="images/gallery/04_AURA_DEPAS.jpg" alt="Imagen 2">
+                                </a>
                             </div>
                             <div class="cl_item">
-                              <img loading="lazy" src="images/gallery/05_AURA_DEPAS.jpg" alt="Imagen 3">
+                                <a class="carousel-img" href="images/gallery/05_AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="">
+                                    <img loading="lazy" src="images/gallery/05_AURA_DEPAS.jpg" alt="Imagen 3">
+                                </a>
                             </div>
                             <div class="cl_item">
-                              <img loading="lazy" src="images/gallery/06_AURA_DEPAS.jpg" alt="Imagen 4">
+                                <a class="carousel-img" href="images/gallery/06_AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="">
+
+                                    <img loading="lazy" src="images/gallery/06_AURA_DEPAS.jpg" alt="Imagen 4">
+                                </a>
                             </div>
                             <div class="cl_item">
-                              <img loading="lazy" src="images/gallery/07_AURA_DEPAS.jpg" alt="Imagen 5">
+                                <a class="carousel-img" href="images/gallery/07_AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="">
+                                    <img loading="lazy" src="images/gallery/07_AURA_DEPAS.jpg" alt="Imagen 5">
+                                </a>
                             </div>
                             <!-- <div class="cl_item">
                               <img loading="lazy" src="images/gallery/08_AURA_DEPAS.jpeg" alt="Imagen 6">
@@ -638,52 +649,21 @@ Aurum se ubica en Altabrisa, la zona residencial de mayor plusvalía en la ciuda
         <!-- <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/designesia.js"></script> -->
 
-         <!-- SLIDER REVOLUTION SCRIPTS  -->
-         <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
-         <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-         <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-         <script>
+        <!-- SLIDER REVOLUTION SCRIPTS  -->
+        <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+        <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+        <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+        <script>
 
-            function planta_Alta_ModeloA(){
-                document.getElementById('plantaB_modeloA').src='images/contacto/A_PA-min.jpg';
-                document.getElementById('nav-home-tab').style.borderBottomColor='';
+        $('.popup-gallery').magnificPopup({
+                delegate: '.owl-item:not(.cloned) a',
+                type: 'image',
+                removalDelay: 500, //delay removal by X to allow out-animation
+        gallery:{
+            enabled:true
             }
-            function planta_Baja_ModeloA(){
-                document.getElementById('plantaB_modeloA').src='images/contacto/A_PB-min.jpg';
-              
-            }
-            function planta_Alta_ModeloB(){
-                document.getElementById('plantaB_modeloB').src='images/contacto/B_PA-min.jpg';
-                document.getElementById('nav-plantaB-tab').style.borderBottomColor='';
-            }
-            function planta_Baja_ModeloB(){
-                document.getElementById('plantaB_modeloB').src='images/contacto/B_PB-min.jpg';
-            }
-
-            // if(document.getElementById('nav-home-tab').classList.contains('active')){
-            //     document.getElementById('nav-home-tab').style.borderBottomColor='black';
-            // }
-
-            // if(document.getElementById('nav-plantaB-tab').classList.contains('active')){
-            //     document.getElementById('nav-plantaB-tab').style.borderBottomColor='black';
-            // }
-        
-            $(document).ready(function(){
-
-                $('.image-popup-no-margins').magnificPopup({
-                    type: 'image',
-                    closeOnContentClick: true,
-                    CloseBtnInside: false,
-                    fixedContentPos: true,
-                    mainClass: 'mfp-no-margins mfp-with-zoom',
-                    image: {
-                        verticalFit: true
-                    },
-                    enabled: true,
-                    duration: 300
-                })
-            })
+            });
             
-         </script>
+        </script>
     </body>
 </html>
