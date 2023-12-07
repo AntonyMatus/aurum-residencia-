@@ -2088,7 +2088,10 @@
         responsive: {
             0: {
                 items: 1,
-                margin: 20
+                margin: 10,
+                loop: true,
+                center: true
+                
             },
             700: {
                 items: 1,
@@ -2103,13 +2106,27 @@
     });
 
 
-    /* cambiar la imagen background */
+        $('.popup-gallery').magnificPopup({
+                delegate: '.owl-item:not(.cloned) a',
+                type: 'image',
+                removalDelay: 500, //delay removal by X to allow out-animation
+        gallery:{
+            enabled:true
+            }
+        });
 
-    /* if (window.innerWidth < 778) {
-        console.log("funciona");
-        $('.img-full').attr("src", "../images/sliders/img_slider-mobile.png"); 
-    }
+        $('.image-popup-no-margins').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            CloseBtnInside: false,
+            fixedContentPos: true,
+            mainClass: 'mfp-no-margins mfp-with-zoom',
+            image: {
+                verticalFit: true
+            },
+            enabled: true,
+            duration: 300
+        })
     
-        $('.img-full').attr("src", "../images/sliders/aura_backgroud.jpeg"); 
-     */
+    
 })( jQuery );
