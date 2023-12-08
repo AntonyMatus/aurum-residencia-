@@ -2090,7 +2090,9 @@
                 items: 1,
                 margin: 10,
                 loop: true,
-                center: true
+                center: true,
+                nav: false,
+                dots: false
                 
             },
             700: {
