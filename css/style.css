@@ -5513,7 +5513,7 @@ input[type="checkbox"].error { box-shadow: 0px 0px 0px 1px rgb(255 0 0), 1px 1px
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
-    line-height: 28px; /* 126.316% */
+    line-height: 12px; /* 126.316% */
 }
 
 
