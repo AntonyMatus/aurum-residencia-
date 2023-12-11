@@ -6455,7 +6455,12 @@
     .title-banner {
         font-size: 20px;
         letter-spacing: 8.36px;
-        line-height: 50px;
+        line-height: 35px;
+    }
+
+    .img-mobile-menu{
+        display: block;
+        width: 80px;
     }
 
     .title-banner2 {
@@ -6553,7 +6558,15 @@
     }
 
     .btn.btn-fancy.btn-large{
-        width: 60% !important;
+        width: 75% !important;
+    }
+
+    .margin-six-top{
+        margin-top: 15%;
+    }
+
+    .btn.btn-fancy.btn-large{
+        font-size: 12.5px;
     }
 
     .position-mobile {
@@ -8164,7 +8177,7 @@
 @media screen and (max-width: 480px) {
     /* yoga meditation*/
     .home-yoga-meditation .rev_slider_wrapper { height: calc(100vh - 72px) !important; }
-    #navbarNav{margin-left: 0px; background: #000323; }
+    #navbarNav{margin-left: 0px; background: #000323; justify-content: flex-start !important; gap: 4rem; padding-top: 4rem;  }
     #seccion_intro{margin-left: 0px;}
     #left{text-align: center;}
     #left2{float: left;}

@@ -17,9 +17,13 @@
         <link rel="stylesheet" type="text/css" href="css/font-icons.min.css">
         <link rel="stylesheet" type="text/css" href="css/theme-vendors.min.css">
         <link rel="stylesheet" href="css/owl.carousel.min.css">
+
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/responsive.css" />
         <link rel="stylesheet" type="text/css" href="css/plugin.css" />
+
+        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="css/slick-theme.css">
         <!-- revolution slider -->
         <link rel="stylesheet" href="rs-plugin/css/settings.css" type="text/css">
         <link rel="stylesheet" href="css/rev-settings.css" type="text/css">
@@ -46,18 +50,19 @@
                             <span class="navbar-toggler-line"></span>
                         </button>
                         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                            <img class="img-mobile-menu" src="images/logos/favicon.png" alt="logo menu mobile">
                             <ul class="navbar-nav alt-font2 align-items-center">
                                 <li class="nav-item dropdown megamenu">
-                                    <a href="#intro" class="nav-link text-uppercase">Introducción</a>
+                                    <a href="#intro2" class="nav-link text-uppercase">Introducción</a>
                                 </li>
                                 <li class="nav-item dropdown simple-dropdown">
                                     <a href="#townhouses" class="nav-link text-uppercase">Modelos</a>
                                 </li>
                                 <li class="nav-item dropdown simple-dropdown">
-                                    <a href="#imagenes" class="nav-link text-uppercase">Galería</a>
+                                    <a href="#gallery" class="nav-link text-uppercase">Galería</a>
                                 </li>
                                 <li class="nav-item dropdown simple-dropdown">
-                                    <a href="#townhouses" class="nav-link text-uppercase">ubicación</a>
+                                    <a href="#ubicacion" class="nav-link text-uppercase">ubicación</a>
                                 </li>
                                 <li class="nav-item dropdown simple-dropdown">
                                     <a href="#contacto" class="nav-link text-uppercase">Contacto</a>
@@ -419,7 +424,7 @@
         </section>
         
         <!-- start section -->
-        <section id="gallery" class="big-section bg-client wow animate__fadeIn position-mobile">
+        <section id="gallery" class="big-section bg-client wow animate__fadeIn ">
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="row justify-content-lg-center">
@@ -445,28 +450,28 @@
                         <div class="cl_items cl_carousel2 owl-carousel owl-theme popup-gallery" data-aos="fade-up">
                             <div class="cl_item">
                                 <a class="carousel-img" href="images/gallery/01-AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="Fachada">
-                                    <img class="carousel-img" loading="lazy" src="images/gallery/01-AURA_DEPAS.jpg" alt="Imagen 1">
+                                    <img id="firs_carrousel_image" class="carousel-img" loading="lazy" src="images/gallery/01-AURA_DEPAS.jpg" alt="Imagen 1">
                                 </a>
                             </div>
                             <div class="cl_item">
                                 <a class="carousel-img" href="images/gallery/04_AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="">
-                                    <img loading="lazy" src="images/gallery/04_AURA_DEPAS.jpg" alt="Imagen 2">
+                                    <img id="second_carrousel_image" loading="lazy" src="images/gallery/04_AURA_DEPAS.jpg" alt="Imagen 2">
                                 </a>
                             </div>
                             <div class="cl_item">
                                 <a class="carousel-img" href="images/gallery/05_AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="">
-                                    <img loading="lazy" src="images/gallery/05_AURA_DEPAS.jpg" alt="Imagen 3">
+                                    <img id="third_carrousel_image" loading="lazy" src="images/gallery/05_AURA_DEPAS.jpg" alt="Imagen 3">
                                 </a>
                             </div>
                             <div class="cl_item">
                                 <a class="carousel-img" href="images/gallery/06_AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="">
 
-                                    <img loading="lazy" src="images/gallery/06_AURA_DEPAS.jpg" alt="Imagen 4">
+                                    <img id="fouth_carrousel_image" loading="lazy" src="images/gallery/06_AURA_DEPAS.jpg" alt="Imagen 4">
                                 </a>
                             </div>
                             <div class="cl_item">
                                 <a class="carousel-img" href="images/gallery/07_AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="">
-                                    <img loading="lazy" src="images/gallery/07_AURA_DEPAS.jpg" alt="Imagen 5">
+                                    <img id="fifth_carrousel_image" loading="lazy" src="images/gallery/07_AURA_DEPAS.jpg" alt="Imagen 5">
                                 </a>
                             </div>
                             <!-- <div class="cl_item">
@@ -476,10 +481,19 @@
                               <img loading="lazy" src="images/gallery/09_AURA_DEPAS.jpeg" alt="Imagen 7">
                             </div> -->
                         </div>
-                        <!-- <a class="popup-gallery margin-six-top btn btn-fancy btn-large  btn-round-edge w-30 btn-orange no-margin-bottom " >VER GALERÍA DE FOTOS</a>
-                     --></div>
+                        <button class=" margin-six-top btn btn-fancy btn-large  btn-round-edge w-30 btn-orange no-margin-bottom " onclick="openModal();" >VER GALERÍA DE FOTOS</button>
+
+                        
+                    </div>
                 </div>
-                <div class="row justify-content-center padding-ten-top">
+            </div>
+            
+        </section> 
+        <!-- Modal -->
+
+        <section id="ubicacion" class="big-section bg-client wow animate__fadeIn position-mobile">
+            <div class="container-fluid">
+                <div class="row justify-content-center ">
                     <div class="col-12 col-xl-8 col-lg-6 col-sm-8 text-lg-center lg-margin-4-rem-bottom md-margin-3-rem-bottom xs-margin-5-rem-bottom wow animate__fadeIn">
                         <div class="sub-title-ubicacion d-flex text-uppercase">
                             <div class="separator-client"></div>
@@ -547,7 +561,8 @@
                 </div>
             </div>
             <img class="icon-mobile" src="images/logos/favicon.png" alt="favicon">
-        </section> 
+        </section>
+        
 
         <section class="half-section border-bottom border-color-medium-gray container_banner">
             <div class="container">
@@ -595,7 +610,7 @@
                                 <div class="col-xl-6">
                                         <div class="form-group">
                                             <select class="form-control" name="propiedad_interes" id="select_propiedad">
-                                                <option disabled selected hidden>Seleccione tipo de propiedad</option>
+                                                <option disabled selected hidden>Tipo de propiedad</option>
                                                 <option>Modelo A</option>
                                                 <option>Modelo B</option>
                                                 <option>Penthouse</option>
@@ -620,6 +635,8 @@
         <!-- end section -->
 
         
+
+
         <!-- start footer -->
         <footer class="padding-one-tb xs-padding-thirteen-tb bg-client-orange ">
             <div class="container">
@@ -648,6 +665,7 @@
         <!-- javascript -->
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/theme-vendors.min.js"></script>
+        <script type="text/javascript" src="js/slick.min.js" ></script>
         <script src="js/owl.carousel.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
 
@@ -658,7 +676,20 @@
         <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
         <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
         <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-        <script>   
+        <script>  
+            
+            function openModal() {
+                const image = document.getElementById('firs_carrousel_image');
+                const image2 = document.getElementById('second_carrousel_image');
+                const image3 = document.getElementById('thirt_carrousel_image');
+                const image4 = document.getElementById('fourth_carrousel_image');
+                const image5 = document.getElementById('fifth_carrousel_image');
+
+                if(image) {
+                    image.click();
+                } 
+                
+            }
         </script>
     </body>
 </html>

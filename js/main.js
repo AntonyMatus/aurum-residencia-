@@ -2071,15 +2071,12 @@
     const nextIcon = '<img src="./images/icons/arrow-right.png" alt="right">';
     const prevIcon = '<img src="./images/icons/arrow-left.png" alt="left" >';
 
+
     $(".cl_carousel2").owlCarousel({
         loop: false,
         items: 1,
         margin: 10,
-        nav: true,
-        navText: [
-            prevIcon,
-            nextIcon
-        ],
+        nav: false,
         dots: false,
         center: true,
         autoplay: false,
@@ -2090,6 +2087,7 @@
                 items: 1,
                 margin: 10,
                 loop: true,
+                autoplay: true,
                 center: true,
                 nav: false,
                 dots: false
@@ -2129,6 +2127,6 @@
             enabled: true,
             duration: 300
         })
-    
-    
+
+
 })( jQuery );

@@ -5513,7 +5513,7 @@ input[type="checkbox"].error { box-shadow: 0px 0px 0px 1px rgb(255 0 0), 1px 1px
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
-    line-height: 12px; /* 126.316% */
+    line-height: 35px; /* 126.316% */
 }
 
 
@@ -5966,4 +5966,30 @@ select, option {
 
 .icon-mobile{
     display: none;
+}
+
+.img-mobile-menu{
+    display: none;
+}
+
+.modal-dialog {
+    max-width: 730px;
+}
+  
+.wrap-modal-slider {
+padding: 0 30px;
+opacity: 0;
+transition: all 0.3s;
+}
+
+.wrap-modal-slider.open {
+opacity: 1;
+}
+
+.slick-prev:before, .slick-next:before {
+color: red;
+}
+
+.modal {
+    background: #0b0b0b;
 }
