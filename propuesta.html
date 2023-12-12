@@ -33,7 +33,7 @@
     <body data-mobile-nav-style="classic">
         <!-- start header -->
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-transparent header-dark fixed-top navbar-boxed header-reverse-scroll">
+            <nav class="navbar navbar-expand-lg top-space navbar-light bg-client header-light fixed-top navbar-boxed header-reverse-scroll border-bottom-2px-gold">
                 <div class="container-fluid nav-header-container justify-content-between">
                     <div class="col-5 col-lg-2 col-sm-5 ps-lg-0 me-auto me-lg-0 " >
                         <a class="navbar-brand" href="index.html">
@@ -76,15 +76,55 @@
         </header>
         <!-- end header -->
         
-        <section id="intro">
-            <div class="intro-content">
-                <div class="row">
-                    <div class="col-twelve">
-                    </div> 
-                </div>   		 		
-            </div> 
-            <img class="icon-mobile" src="images/logos/favicon.png" alt="favicon">
-        </section> <!-- /intro -->
+        <section class="hero bg-client">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12">
+                  <div class="hero_wrapper">
+                    <!-- container area here  -->
+                    <div class="container">
+                      <div class="row justify-content-between">
+                        <div class="col-lg-4">
+                          <div class="hero_container">
+                            <h3 class="sub-title-hero">bienvenido a aurum apartments.</h3>
+                            <h1 class="hero_header" data-aos="fade-up"> DONDE EL LUJO SE HACE <span data-aos="slide-left" data-aos-delay="100" class="marking">REALIDAD</span>.</h1>
+                            <div class="d-flex">
+                                <a href="#contacto" class="btn btn-fancy btn-medium btn-orange margin-30px-right xs-margin-15px-bottom">Contacto</a>
+                                <a href="#twonhouse" class="btn btn-fancy btn-medium btn-transparent border-1px-orange text-white margin-30px-right xs-margin-15px-bottom">Modelos</a>
+                            </div>
+                            <div class="col-lg-12 col-md-10 col-sm-12  elements-social social-icon-style-01 padding-five-top">
+                                <ul class="large-icon">
+                                    <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a class="google" href="http://plus.google.com" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                                    <li><a class="google" href="http://plus.google.com" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>
+                                    
+                                </ul>
+                            </div>
+                           
+                          </div>
+                        </div>
+                        <div class="col-lg-7 bg-orange position-relative ">
+                            <div class="banner_image">
+                                <img data-aos="slide-left" src="images/banner/img_propuesta_2.jpeg" alt="">
+                            </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <!-- vector area here  -->
+                    
+                    <!-- banner area here  -->
+                    
+                    <!-- <div class="banner_image-2">
+                        <div class="bg-orange"></div>
+                    </div> -->
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         
 
         <section class="half-section border-bottom border-color-medium-gray container_banner position-mobile">
@@ -446,7 +486,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-10 col-xl-10 text-center">
+                    <div class="col-12 col-xl-10 text-center">
                         <div class="cl_items cl_carousel2 owl-carousel owl-theme popup-gallery" data-aos="fade-up">
                             <div class="cl_item">
                                 <a class="carousel-img" href="images/gallery/01-AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="Fachada">
@@ -680,10 +720,7 @@
             
             function openModal() {
                 const image = document.getElementById('firs_carrousel_image');
-                const image2 = document.getElementById('second_carrousel_image');
-                const image3 = document.getElementById('thirt_carrousel_image');
-                const image4 = document.getElementById('fourth_carrousel_image');
-                const image5 = document.getElementById('fifth_carrousel_image');
+                
 
                 if(image) {
                     image.click();
