@@ -5509,7 +5509,7 @@ input[type="checkbox"].error { box-shadow: 0px 0px 0px 1px rgb(255 0 0), 1px 1px
 
 .info-description{
     color: #ECE5DE;
-    font-family: 'Cormorant Garamond';
+    font-family: 'Cormorant';
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
@@ -5644,7 +5644,7 @@ input[type="checkbox"].error { box-shadow: 0px 0px 0px 1px rgb(255 0 0), 1px 1px
 .info-description-modelos{
     color: #FFF;
     text-align: center;
-    font-family: 'Cormorant Garamond';
+    font-family: 'Cormorant';
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
@@ -5744,7 +5744,7 @@ select, option {
 }
 
 .background-client{
-    background-image: url('../images/sliders/aura_backgroud.jpeg');
+    background-image: url('../images/sliders/imagen_background.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -5758,7 +5758,7 @@ select, option {
  */
 
 #intro {
-	background: #14181E url(../images/sliders/aura_backgroud.jpeg) no-repeat center;
+	background: #14181E url(../images/sliders/imagen_background.png) no-repeat center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: 100% 100%;
