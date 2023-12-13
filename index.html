@@ -24,10 +24,14 @@
 
         <link rel="stylesheet" href="css/slick.css">
         <link rel="stylesheet" href="css/slick-theme.css">
+
+        <link rel="stylesheet" href="plugins/photo-swipe/photoswipe.css">
         <!-- revolution slider -->
         <link rel="stylesheet" href="rs-plugin/css/settings.css" type="text/css">
         <link rel="stylesheet" href="css/rev-settings.css" type="text/css">
         <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
        
     </head>
     <body data-mobile-nav-style="classic">
@@ -446,31 +450,31 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-10 col-xl-10 text-center">
-                        <div class="cl_items cl_carousel2 owl-carousel owl-theme popup-gallery" data-aos="fade-up">
+                    <div class="col-12 col-xl-10 text-center">
+                        <div class="cl_items cl_carousel2 owl-carousel owl-theme" data-aos="fade-up" id="popup-gallery">
                             <div class="cl_item">
-                                <a class="carousel-img" href="images/gallery/01-AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="Fachada">
+                                <a  data-pswp-width="800" data-pswp-height="533"  href="images/gallery/01-AURA_DEPAS.jpg" title="Fachada">
                                     <img id="firs_carrousel_image" class="carousel-img" loading="lazy" src="images/gallery/01-AURA_DEPAS.jpg" alt="Imagen 1">
                                 </a>
                             </div>
                             <div class="cl_item">
-                                <a class="carousel-img" href="images/gallery/04_AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="">
+                                <a data-pswp-width="800" data-pswp-height="533"  href="images/gallery/04_AURA_DEPAS.jpg"  title="">
                                     <img id="second_carrousel_image" loading="lazy" src="images/gallery/04_AURA_DEPAS.jpg" alt="Imagen 2">
                                 </a>
                             </div>
                             <div class="cl_item">
-                                <a class="carousel-img" href="images/gallery/05_AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="">
+                                <a data-pswp-width="800" data-pswp-height="533"  href="images/gallery/05_AURA_DEPAS.jpg"  title="">
                                     <img id="third_carrousel_image" loading="lazy" src="images/gallery/05_AURA_DEPAS.jpg" alt="Imagen 3">
                                 </a>
                             </div>
                             <div class="cl_item">
-                                <a class="carousel-img" href="images/gallery/06_AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="">
+                                <a data-pswp-width="800" data-pswp-height="533" href="images/gallery/06_AURA_DEPAS.jpg"  title="">
 
                                     <img id="fouth_carrousel_image" loading="lazy" src="images/gallery/06_AURA_DEPAS.jpg" alt="Imagen 4">
                                 </a>
                             </div>
                             <div class="cl_item">
-                                <a class="carousel-img" href="images/gallery/07_AURA_DEPAS.jpg" data-effect="mfp-zoom-in" title="">
+                                <a data-pswp-width="800" data-pswp-height="533" href="images/gallery/07_AURA_DEPAS.jpg"  title="">
                                     <img id="fifth_carrousel_image" loading="lazy" src="images/gallery/07_AURA_DEPAS.jpg" alt="Imagen 5">
                                 </a>
                             </div>
@@ -609,7 +613,7 @@
                                 </div>
                                 <div class="col-xl-6">
                                         <div class="form-group">
-                                            <select class="form-control" name="propiedad_interes" id="select_propiedad">
+                                            <select class="form-control" name="property_type" id="select_propiedad">
                                                 <option disabled selected hidden>Tipo de propiedad</option>
                                                 <option>Modelo A</option>
                                                 <option>Modelo B</option>
@@ -667,15 +671,18 @@
         <script type="text/javascript" src="js/theme-vendors.min.js"></script>
         <script type="text/javascript" src="js/slick.min.js" ></script>
         <script src="js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/toast_message.js"></script>
 
-        <!-- <script type="text/javascript" src="js/plugins.js"></script>
-        <script type="text/javascript" src="js/designesia.js"></script> -->
 
         <!-- SLIDER REVOLUTION SCRIPTS  -->
         <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
         <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
         <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+
+
+
         <script>  
             
             function openModal() {
@@ -690,6 +697,23 @@
                 } 
                 
             }
+        </script>
+        <script type="module">
+        
+
+            import PhotoSwipeLightbox from './plugins/photo-swipe/photoswipe-lightbox.esm.js';
+
+            const lightbox = new PhotoSwipeLightbox({
+            // may select multiple "galleries"
+            gallery: '#popup-gallery',
+
+            // Elements within gallery (slides)
+            children: '.owl-item:not(.cloned) a',
+
+            // setup PhotoSwipe Core dynamic import
+            pswpModule: () => import('./plugins/photo-swipe/photoswipe.esm.js')
+            });
+            lightbox.init();
         </script>
     </body>
 </html>

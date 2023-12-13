@@ -1,260 +1,401 @@
 <?php
-if( ! empty( $_POST['email'] ) ) {
 
-	// Enable / Disable SMTP
-	$enable_smtp = 'no'; // yes OR no
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$property_type = $_POST['property_type'];
+
+if (
+	!empty($name) && 
+	!empty($email) && 
+	!empty($phone) && 
+	!empty($property_type)
+) {
+	$host = $_SERVER['HTTP_HOST'];
 
 	// Email Receiver Address
-	$receiver_email = 'hola@murumasterbroker.com';
+	$receiver_email = 'inmobiliaria.tanay@outlook.es';
+
+	/*  */
 
 	// Email Receiver Name for SMTP Email
-	$receiver_name 	= 'Natum';
+	$receiver_name 	= 'Aurum Residencial';
 
 	// Email Subject
-	$subject = 'Nuevo lead de mi página web | Vitúa Residencial ';
+	$subject_email = 'Nuevo Lead desde mi página web';
 
-	$from 	= $_POST['email'];
-	$name 	= isset( $_POST['name'] ) ? $_POST['name'] : '';
-	$phone 	= isset( $_POST['phone'] ) ? $_POST['phone'] : '';
-	//$comment= isset( $_POST['comment'] ) ? $_POST['comment'] : '';
+	$current_year = date('Y');
 
 	// Build the email content.
-	$message = '
-	<!DOCTYPE html>
+	$html = '
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+		<head>
+		<!--[if gte mso 9]>
+		<xml>
+		  <o:OfficeDocumentSettings>
+		    <o:AllowPNG/>
+		    <o:PixelsPerInch>96</o:PixelsPerInch>
+		  </o:OfficeDocumentSettings>
+		</xml>
+		<![endif]-->
+		  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		  <meta name="x-apple-disable-message-reformatting">
+		  <!--[if !mso]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge"><!--<![endif]-->
+		  <title></title>
+		  
+		    <style type="text/css">
+			@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap");
+			@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&display=swap");
+		      @media only screen and (min-width: 520px) {
+		  .u-row {
+		    width: 500px !important;
+		  }
+		  .u-row .u-col {
+		    vertical-align: top;
+		  }
 
-<html lang="en" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
-<head>
-<title></title>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]-->
-<style>
-		* {
-			box-sizing: border-box;
+		  .u-row .u-col-100 {
+		    width: 500px !important;
+		  }
+
 		}
 
+		@media (max-width: 520px) {
+		  .u-row-container {
+		    max-width: 100% !important;
+		    padding-left: 0px !important;
+		    padding-right: 0px !important;
+		  }
+		  .u-row .u-col {
+		    min-width: 320px !important;
+		    max-width: 100% !important;
+		    display: block !important;
+		  }
+		  .u-row {
+		    width: 100% !important;
+		  }
+		  .u-col {
+		    width: 100% !important;
+		  }
+		  .u-col > div {
+		    margin: 0 auto;
+		  }
+		}
 		body {
-			margin: 0;
-			padding: 0;
+		  margin: 0;
+		  padding: 0;
+		  background: #000323;
 		}
 
-		th.column {
-			padding: 0
-		}
-
-		a[x-apple-data-detectors] {
-			color: inherit !important;
-			text-decoration: inherit !important;
-		}
-
-		#MessageViewBody a {
-			color: inherit;
-			text-decoration: none;
+		table,
+		tr,
+		td {
+		  vertical-align: top;
+		  border-collapse: collapse;
 		}
 
 		p {
-			line-height: inherit
+		  margin: 0;
 		}
 
-		@media (max-width:670px) {
-			.icons-inner {
-				text-align: center;
-			}
-
-			.icons-inner td {
-				margin: 0 auto;
-			}
-
-			.row-content {
-				width: 100% !important;
-			}
-
-			.stack .column {
-				width: 100%;
-				display: block;
-			}
+		.ie-container table,
+		.mso-container table {
+		  table-layout: fixed;
 		}
-	</style>
-</head>
-<body style="background-color: #FFFFFF; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
-<table border="0" cellpadding="0" cellspacing="0" class="nl-container" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #FFFFFF;" width="100%">
-<tbody>
-<tr>
-<td>
-<table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-1" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #1a3831;" width="100%">
-<tbody>
-<tr>
-<td>
-<table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="650">
-<tbody>
-<tr>
-<th class="column" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px;" width="100%">
-<table border="0" cellpadding="10" cellspacing="0" class="text_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;" width="100%">
-<tr>
-<td>
-<div style="font-family: sans-serif">
-<div style="font-size: 12px; color: #555555; line-height: 1.2; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;">
-<p style="margin: 0; font-size: 12px; mso-line-height-alt: 14.399999999999999px;"> </p>
-</div>
-</div>
-</td>
-</tr>
-</table>
-<table border="0" cellpadding="0" cellspacing="0" class="image_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
-<tr>
-<td style="width:100%;padding-right:0px;padding-left:0px;">
-<div align="center" style="line-height:10px"><img src="https://natumliving.com/images/imagen_correo/logo5.png" style="display: block; height: auto; border: 0; width: 228px; max-width: 100%;" width="228"/></div>
-</td>
-</tr>
-</table>
-<table border="0" cellpadding="10" cellspacing="0" class="text_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;" width="100%">
-<tr>
-<td>
-<div style="font-family: sans-serif">
-<div style="font-size: 12px; color: #555555; line-height: 1.2; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;">
-<p style="margin: 0; font-size: 12px; mso-line-height-alt: 14.399999999999999px;"> </p>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</th>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-<table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-2" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #1a3831;" width="100%">
-<tbody>
-<tr>
-<td>
-<table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff;" width="650">
-<tbody>
-<tr>
-<th class="column" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-bottom: 1px solid transparent; border-left: 1px solid transparent; border-right: 1px solid transparent; border-top: 1px solid transparent; padding-top: 15px; padding-bottom: 15px;" width="100%">
-<table border="0" cellpadding="0" cellspacing="0" class="heading_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
-<tr>
-<td style="width:100%;text-align:center;">
-<h1 style="margin: 0; color: #000; font-size: 25px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; line-height: 120%; text-align: center; direction: ltr; font-weight: normal; letter-spacing: normal; margin-top: 0; margin-bottom: 0;"><strong>Nuevo contacto de mi página web.</strong></h1>
-</td>
-</tr>
-</table>
-<table border="0" cellpadding="20" cellspacing="0" class="text_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;" width="100%">
-<tr>
-<td>
-<div style="font-family: sans-serif">
-<div style="font-size: 14px; color: #000; line-height: 1.5; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;">
-<p style="margin: 0; font-size: 14px; text-align: left; letter-spacing: normal;">Nombre: ' . $name . '</p>
-<p style="margin: 0; font-size: 14px; text-align: left; letter-spacing: normal;">Correo: ' . $from . ' </p>
-<p style="margin: 0; font-size: 14px; text-align: left; letter-spacing: normal;">Telefono: ' . $phone . ' </p>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</th>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-<table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-3" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #1a3831;" width="100%">
-<tbody>
-<tr>
-<td>
-<table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="650">
-<tbody>
-<tr>
-<th class="column" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px;" width="100%">
-<table border="0" cellpadding="10" cellspacing="0" class="text_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;" width="100%">
-<tr>
-<td>
-<div style="font-family: sans-serif">
-<div style="font-size: 14px; color: #555555; line-height: 1.2; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;">
-<p style="margin: 0; font-size: 14px; text-align: center;"><span style="color:#ffffff;font-size:15px;">© 2021 Natum. All rights reserved.</span></p>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</th>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-<table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-4" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
-<tbody>
-<tr>
-<td>
-<table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="650">
-<tbody>
-<tr>
-<th class="column" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px;" width="100%">
-<table border="0" cellpadding="0" cellspacing="0" class="icons_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
-<tr>
-<td style="color:#9d9d9d;font-family:inherit;font-size:15px;padding-bottom:5px;padding-top:5px;text-align:center;">
-<table cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
-<tr>
-<td style="text-align:center;">
-<!--[if vml]><table align="left" cellpadding="0" cellspacing="0" role="presentation" style="display:inline-block;padding-left:0px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><![endif]-->
-<!--[if !vml]><!-->
-<table cellpadding="0" cellspacing="0" class="icons-inner" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block; margin-right: -4px; padding-left: 0px; padding-right: 0px;">
-<!--<![endif]-->
-</table>
-</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</th>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table><!-- End -->
-</body>
-</html>
-		';
 
-	if( $enable_smtp == 'no' ) { // Simple Email
-
-		// Always set content-type when sending HTML email
-		$headers = "MIME-Version: 1.0" . "\r\n";
-		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-		// More headers
-		$headers .= 'From: ' . $name . ' <' . $from . '>' . "\r\n";
-		if( mail( $receiver_email, $subject, $message, $headers ) ) {
-
-			// Redirect to success page
-			$redirect_page_url = ! empty( $_POST['redirect'] ) ? $_POST['redirect'] : '';
-			if( ! empty( $redirect_page_url ) ) {
-				header( "Location: " . $redirect_page_url );
-				exit();
-			}
-
-		   	//Success Message
-		  	echo '{ "alert": "alert-success", "message": "¡Gracias, su mensaje ha sido enviado!" }';
-		} else {
-			//Fail Message
-		  	echo '{ "alert": "alert-danger", "message": "¡Lo sentimos, su mensaje no pudo ser enviado!" }';
+		* {
+		  line-height: inherit;
 		}
-		
-	} 
-} else {
-	//Empty Email Message
-	echo '{ "alert": "alert-danger", "message": "¡Por favor ingrese un correo!" }';
+
+		a[x-apple-data-detectors="true"] {
+		  color: inherit !important;
+		  text-decoration: none !important;
+		}
+
+		table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: underline; } @media (max-width: 480px) { #u_content_image_1 .v-src-width { width: auto !important; } #u_content_image_1 .v-src-max-width { max-width: 25% !important; } }
+		    </style>
+		  
+		  
+
+		</head>
+
+		<body class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #000323;color: #000000">
+		  <!--[if IE]><div class="ie-container"><![endif]-->
+		  <!--[if mso]><div class="mso-container"><![endif]-->
+		  <table id="u_body" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #000323;width:100%" cellpadding="0" cellspacing="0">
+		  <tbody>
+		  <tr style="vertical-align: top">
+		    <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
+		    <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #e7e7e7;"><![endif]-->
+		    
+		  
+		  
+		<div class="u-row-container" style="padding: 20px 0px;background-color: #000323">
+		  <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
+		    <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
+		      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 20px 0px;background-color: #ffffff;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
+		      
+		<!--[if (mso)|(IE)]><td align="center" width="500" style="background-color: #ffffff;width: 500px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
+		<div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top;">
+		  <div style="background-color: #000323;height: 100%;width: 100% !important;">
+		  <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;"><!--<![endif]-->
+		  
+		<table id="u_content_image_1" style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+		  <tbody>
+		    <tr>
+		      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
+		        
+		<table width="100%" cellpadding="0" cellspacing="0" border="0">
+		  <tr>
+		    <td style="padding-right: 0px;padding-left: 0px;" align="center">
+		      
+		      <img align="center" border="0" src="https://' . $host . '../images/email/logo_msg.svg" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 40%;" width="auto" class="v-src-width v-src-max-width"/>
+		      
+		    </td>
+		  </tr>
+		</table>
+
+		      </td>
+		    </tr>
+		  </tbody>
+		</table>
+
+		  <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
+		  </div>
+		</div>
+		<!--[if (mso)|(IE)]></td><![endif]-->
+		      <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+		    </div>
+		  </div>
+		  </div>
+		  
+
+
+		  
+		  
+		<div class="u-row-container" style="padding: 0px;background-color: #000323">
+		  <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
+		    <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
+		      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #ffffff;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
+		      
+		<!--[if (mso)|(IE)]><td align="center" width="500" style="background-color: #86a170;width: 500px;padding: 20px 0px 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+		<div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top; border-left: 3px solid #B88013; border-top: 3px solid #B88013; border-right: 3px solid #B88013;">
+		  <div style="background-color: #000323;height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
+		  <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 20px 0px 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
+		  
+		<table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+		  <tbody>
+		    <tr>
+		      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
+		        
+		  <h1 style="margin: 0px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word; font-size: 22px; font-weight: 400; font-family: "Cinzel";"><strong>Lead interesado en el complejo </strong><br><strong>AURUM APARTMENTS</strong></h1>
+
+		      </td>
+		    </tr>
+		  </tbody>
+		</table>
+
+		  <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
+		  </div>
+		</div>
+		<!--[if (mso)|(IE)]></td><![endif]-->
+		      <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+		    </div>
+		  </div>
+		  </div>
+		  
+
+
+		  
+		  
+		<div class="u-row-container" style="padding: 0px;background-color: #000323">
+		  <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
+		    <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
+		      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #ffffff;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
+		      
+		<!--[if (mso)|(IE)]><td align="center" width="500" style="background-color: #86a170;width: 500px;padding: 20px 30px 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+		<div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top; border-right: 3px solid #B88013; border-left: 3px solid #B88013; ">
+		  <div style="background-color: #000323;height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
+		  <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 20px 30px 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
+		  
+		<table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+		  <tbody>
+		    <tr>
+		      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
+		        
+		  <div style="font-size: 14px; color: #ffffff; line-height: 140%; text-align: left; word-wrap: break-word;">
+		    <p style="line-height: 140%; font-family: "Cormorant"; font-size: 18px; font-weight: 600;">Nuevo lead desde mi página web, a continuación los datos</p>
+		<p style="line-height: 140%; font-family: "Cormorant"; font-size: 18px; font-weight: 600; ">de contacto: </p>
+		<p style="line-height: 140%;">&nbsp;</p>
+		<p style="line-height: 140%; font-family: "Cormorant"; font-size: 18px;"><strong>Nombre: </strong>' . $name . '<br><strong>Email: </strong>' . $email . '<br><strong>Teléfono de contacto: </strong> ' . $phone . '<br><strong>Tipo de propiedad de interés: </strong>'. $property_type .'</p>
+		<p style="line-height: 140%;">&nbsp;</p>
+		  </div>
+
+		      </td>
+		    </tr>
+		  </tbody>
+		</table>
+
+		  <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
+		  </div>
+		</div>
+		<!--[if (mso)|(IE)]></td><![endif]-->
+		      <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+		    </div>
+		  </div>
+		  </div>
+		  
+
+
+		  
+		  
+		<div class="u-row-container" style="padding: 0px;background-color: #000323">
+		  <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
+		    <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
+		      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #ffffff;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
+		      
+		<!--[if (mso)|(IE)]><td align="center" width="500" style="background-color: #86a170;width: 500px;padding: 0px 30px 50px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+		<div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top; border-right: 3px solid #B88013; border-left: 3px solid #B88013; ">
+		  <div style="background-color: #000323;height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
+		  <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 0px 30px 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
+		  
+		<table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+		  <tbody>
+		    <tr>
+		      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
+		        
+		<table width="100%" cellpadding="0" cellspacing="0" border="0">
+		  <tr>
+		    <td style="padding-right: 0px;padding-left: 0px;" align="center">
+		      
+		      <img align="center" border="0" src="https://' . $host . '../images/email/imagen_background_msg.png" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 480px;" width="480" class="v-src-width v-src-max-width"/>
+		      
+		    </td>
+		  </tr>
+		</table>
+
+		      </td>
+		    </tr>
+		  </tbody>
+		</table>
+
+		  <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
+		  </div>
+		</div>
+		<!--[if (mso)|(IE)]></td><![endif]-->
+		      <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+		    </div>
+		  </div>
+		  </div>
+		  
+
+
+		  
+		  
+		<div class="u-row-container" style="padding: 0px;background-color: #000323">
+		  <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
+		    <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
+		      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #ffffff;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
+		      
+		<!--[if (mso)|(IE)]><td align="center" width="500" style="background-color: #f8f8f8;width: 500px;padding: 30px 30px 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+		<div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top;
+		border-right: 3px solid #B88013; border-left: 3px solid #B88013; ">
+		  <div style="background-color: #000323;height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
+		  <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 30px 30px 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
+		  
+		<table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+		  <tbody>
+		    <tr>
+		      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
+		        
+		  <div style="font-size: 14px; color: #fff; line-height: 140%; text-align: left; word-wrap: break-word;">
+		    <p style="line-height: 140%; font-family: "Cormorant"; font-size: 18px;">
+				Este correo tiene el propósito de informar al administrador de AURUM APARTMENTS acerca de nuevos leads provenientes de su página web.
+			</p>
+		  </div>
+
+		      </td>
+		    </tr>
+		  </tbody>
+		</table>
+
+		  <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
+		  </div>
+		</div>
+		<!--[if (mso)|(IE)]></td><![endif]-->
+		      <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+		    </div>
+		  </div>
+		  </div>
+		  
+
+
+		  
+		  
+		<div class="u-row-container" style="padding: 0px;background-color: #000323">
+		  <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
+		    <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
+		      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #ffffff;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
+		      
+		<!--[if (mso)|(IE)]><td align="center" width="500" style="background-color: #f8f8f8;width: 500px;padding: 0px 0px 50px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+		<div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top; border-right: 3px solid #B88013; border-left: 3px solid #B88013; border-bottom: 3px solid #B88013;">
+		  <div style="background-color: #000323;height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
+		  <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 0px 0px 50px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
+		  
+		<table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+		  <tbody>
+		    <tr>
+		      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
+		        
+		  <!--[if mso]><style>.v-button {background: transparent !important;}</style><![endif]-->
+		<div align="center">
+		  <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:37px; v-text-anchor:middle; width:154px;" arcsize="54%"  stroke="f" fillcolor="#86a170"><w:anchorlock/><center style="color:#FFFFFF;"><![endif]-->
+		    <a href="https://azana-apartments.com" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #B88013; border-radius: 20px;-webkit-border-radius: 20px; -moz-border-radius: 20px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;font-size: 14px;">
+		      <span style="display:block;padding:10px 20px;line-height:120%;">Visitar página web</span>
+		    </a>
+		    <!--[if mso]></center></v:roundrect><![endif]-->
+		</div>
+
+		      </td>
+		    </tr>
+		  </tbody>
+		</table>
+
+		  <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
+		  </div>
+		</div>
+		<!--[if (mso)|(IE)]></td><![endif]-->
+		      <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+		    </div>
+		  </div>
+		  </div>
+		  
+
+
+		    <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+		    </td>
+		  </tr>
+		  </tbody>
+		  </table>
+		  <!--[if mso]></div><![endif]-->
+		  <!--[if IE]></div><![endif]-->
+		</body>
+
+		</html>
+	';
+
+	// Always set content-type when sending HTML email
+	$headers = "MIME-Version: 1.0" . "\r\n";
+	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+	// More headers
+	$headers .= 'From: ' . $name . ' <' . $email . '>' . "\r\n";
+
+	if(mail($receiver_email, $subject_email, $html, $headers)) {
+	  	echo '{ "message": "¡Su mensaje ha sido enviado!" }';
+	} else {
+	  	echo '{ "message": "Lo sentimos, su mensaje no pudo ser enviado" }';
+	}
 }

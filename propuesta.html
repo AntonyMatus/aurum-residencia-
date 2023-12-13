@@ -629,32 +629,32 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-12 col-xl-8 col-lg-10 col-md-10">
-                        <form action="email-templates/contact-form.php" method="post" class="text-center">
+                        <form onsubmit="sendMessage(event)" id="contact-form" class="text-center">
                             <div class="row">
                                 <div class="col-xl-6">
                                     <div class="form-group">
-                                        <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" >
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required >
                                       
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="form-group">
-                                        <input type="text" name="email" id="email" class="form-control" placeholder="Email" >
+                                        <input type="text" name="email" id="email" class="form-control" placeholder="Email" required >
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="form-group">
-                                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Numero de contacto" >
+                                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Numero de contacto" required >
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                         <div class="form-group">
-                                            <select class="form-control" name="propiedad_interes" id="select_propiedad">
+                                            <select class="form-control" name="propiedad_interes" id="select_propiedad" required>
                                                 <option disabled selected hidden>Tipo de propiedad</option>
-                                                <option>Modelo A</option>
-                                                <option>Modelo B</option>
-                                                <option>Penthouse</option>
-                                                <option>Solo deseo información general</option>
+                                                <option value="Modelo A">Modelo A</option>
+                                                <option value="Modelo B">Modelo B</option>
+                                                <option value="Penthouse">Penthouse</option>
+                                                <option value="Solo deseo información general">Solo deseo información general</option>
                                             </select>
                                         </div>
                                 </div>
@@ -666,7 +666,6 @@
                             </div>
                             <input type="hidden" name="redirect" value="">
                             <button class="btn btn-fancy btn-large  btn-round-edge w-50 btn-orange no-margin-bottom submit" type="submit" name="submit">MÁS INFORMACIÓN</button>
-                            <div class="form-results border-radius-5px d-none"></div>
                         </form>
                     </div>
                 </div>
@@ -698,7 +697,7 @@
 
         <!-- start scroll to top -->
 
-           <!--  <a class="btn-whatsapp-style-1 text-white" href="https://wa.link/499bku" target="_blank">
+        <!--  <a class="btn-whatsapp-style-1 text-white" href="https://wa.link/499bku" target="_blank">
                 <i class="fab fa-whatsapp whatsapp-icon"></i>
             </a> -->
         <!-- end scroll to top -->

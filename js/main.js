@@ -2106,27 +2106,19 @@
     });
 
 
-        $('.popup-gallery').magnificPopup({
-                delegate: '.owl-item:not(.cloned) a',
-                type: 'image',
-                removalDelay: 500, //delay removal by X to allow out-animation
-        gallery:{
-            enabled:true
-            }
-        });
 
-        $('.image-popup-no-margins').magnificPopup({
-            type: 'image',
-            closeOnContentClick: true,
-            CloseBtnInside: false,
-            fixedContentPos: true,
-            mainClass: 'mfp-no-margins mfp-with-zoom',
-            image: {
-                verticalFit: true
-            },
-            enabled: true,
-            duration: 300
-        })
+    $('.image-popup-no-margins').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        CloseBtnInside: false,
+        fixedContentPos: true,
+        mainClass: 'mfp-no-margins mfp-with-zoom',
+        image: {
+            verticalFit: true
+        },
+        enabled: true,
+        duration: 300
+    })
 
 
 })( jQuery );
